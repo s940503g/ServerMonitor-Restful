@@ -9,7 +9,7 @@ var url = 'mongodb://localhost:27017/ServerMonitor';
 
 var query = function (ip, date, callback) {
 	mongoClient.connect(url, function (err, db) {
-		var cursor = db.collection('ping').find({ "ip":ip, "date":date });
+		var cursor = db.collection('TEST').find({ "ip":ip, "date":date });
 
 		var results = new Array();
 		cursor.each(function (err, doc) {
@@ -37,3 +37,6 @@ app.get('/api/:ip/:date', function (req, res) {
 	});
 });
 
+app.listen(8081, function () {
+	consol.log("ready port for 8081");
+});
