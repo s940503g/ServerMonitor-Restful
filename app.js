@@ -38,5 +38,5 @@ app.get('/api/:ip/:date', function (req, res) {
 });
 
 app.listen(8081, function () {
-	consol.log("ready port for 8081");
+	console.log("ready port for 8081");
 });
